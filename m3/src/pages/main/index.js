@@ -17,6 +17,7 @@ class Main extends Component {
           url: PropTypes.string,
         }),
       ),
+      error: PropTypes.oneOfType([null, PropTypes.string]),
     }).isRequired,
   };
 
@@ -25,8 +26,10 @@ class Main extends Component {
   };
 
   handleAddRepository = (event) => {
+    const { repositoryInput } = this.state;
+
     event.preventDefault();
-    this.props.addFavoritesRequest(this.state.repositoryInput);
+    this.props.addFavoritesRequest(repositoryInput);
     this.setState({
       repositoryInput: '',
     });

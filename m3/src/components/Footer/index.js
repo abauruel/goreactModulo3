@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const Footer = ({ count }) => (
   <p>
     {' '}
-Você tem
+    Você tem
     {count}
     {' '}
 favoritos.
@@ -13,7 +13,7 @@ favoritos.
 );
 
 const mapStateToProps = state => ({
-  count: state.favorites.length,
+  count: state.favorites.data.length,
 });
 Footer.propTypes = {
   count: PropTypes.number.isRequired,
